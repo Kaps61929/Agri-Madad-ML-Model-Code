@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Potato Water Requirements Prediction</h1>
+    <form action="{{url_for('predict')}}" method="post">
+      <label for="crop_type">CROP TYPE</label>
+      <select name="CROP TYPE" id="crop_type" required>
+        <option value="POTATO">POTATO</option>
+        <option value="WHEAT">WHEAT</option>
+      </select>
+      <label for="soil_type">SOIL TYPE</label>
+      <select name="SOIL TYPE" id="soil_type" required>
+        <option value="DRY">DRY</option>
+        <option value="HUMID">HUMID</option>
+        <option value="WET">WET</option>
+      </select>
+      <br />
+      <label for="region">REGION</label>
+      <select name="REGION" id="region" required>
+        <option value="DESERT">DESERT</option>
+        <option value="SEMI ARID">SEMI ARID</option>
+        <option value="SEMI HUMID">SEMI HUMID</option>
+        <option value="HUMID">HUMID</option>
+      </select>
+      <br />
+      <label for="weather_condition">WEATHER CONDITION</label>
+      <select name="WEATHER CONDITION" id="weather_condition" required>
+        <option value="NORMAL">NORMAL</option>
+        <option value="SUNNY">SUNNY</option>
+        <option value="WINDY">WINDY</option>
+        <option value="RAINY">RAINY</option>
+      </select>
+      <br />
+      <label for="temp_min">TEMP_MIN</label>
+      <input
+        type="number"
+        name="TEMP_MIN"
+        id="temp_min"
+        placeholder="Min Temperature"
+        required
+      />
+      <br />
+      <label for="temp_max">TEMP_MAX</label>
+      <input
+        type="number"
+        name="TEMP_MAX"
+        id="temp_max"
+        placeholder="Max Temperature"
+        required
+      />
+      <button type="submit">SUBMIT</button>
+    </form>
+    <br />
+    <br />
+    <div>{{prediction_text}}</div>
+  </body>
+</html>
